@@ -57,8 +57,8 @@ int main(){
 
                     
                 }
-
-                if(team1[i]>team2[j]){
+                
+                if(team1[i]>team2[j] && i<team1.size()){
                     j++;
                     cont++;
                 }
