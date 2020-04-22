@@ -23,4 +23,5 @@ Array
 		--> to handle the 0 case , increase all elements by 1 and show result by decresing 1 from each element
 		
 
-		continue video 18 and from problem after above
+	4. Find a pair of Number whose sum is equal to X
+    -->> always sort and use two pointer method
