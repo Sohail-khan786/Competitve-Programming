@@ -25,3 +25,9 @@ Array
 
 	4. Find a pair of Number whose sum is equal to X
     -->> always sort and use two pointer method
+        -->> two pointers will be left and right  and loop always==> while(left<right)
+
+    5. sum of 3 elements equal to X
+    -->> extended double pointer method --> sort array
+                                        -->fix first number and subtract it from required sum
+                                        --> now play double pointer method to find pair equal to remaining sum , hence u got your triplet

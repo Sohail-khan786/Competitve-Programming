@@ -12,10 +12,5 @@ int main()
 #endif
 
 
-	int x;
-	cin>>x;
-	cout<<x+1<<endl;
-
-	cout<<"hello"<<endl;
 	return 0;
 }
