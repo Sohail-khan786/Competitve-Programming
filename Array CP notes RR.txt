@@ -51,3 +51,8 @@ Array
                                                                 (The 5th step is complex --> and it works --> because if hm[sum – s] is present than we have already seen a subArray of sumValue= (sum – s) which when subtracted with current subArray gives indices of subArray forming our required s i.e X)
                                                        6. Put the sum and index in the hashmap as key-value pair.
             --> C. sum of all sub array --> pre compute sum array and use DP --> order of n-square
+
+    
+Key Points : 
+      1. map (ordered)  implmeneted as self balacing BST hence everything from insert , search delete takes logn
+      2. unordered_Map are best used for hashing , every operation on average case take o(1)  , rare case it take o(n)
