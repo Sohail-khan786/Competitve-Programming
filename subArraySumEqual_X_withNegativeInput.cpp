@@ -1,55 +1,70 @@
-#include<bits/stdc++.h> 
-using namespace std; 
+#include<bits/stdc++.h>
 
-// Function to print subarray with sum as given sum 
-void subArraySum(int arr[], int n, int sum) 
-{ 
-    // create an empty map 
-    unordered_map<int, int> map; 
+using namespace std;
 
-    // Maintains sum of elements so far 
-    int curr_sum = 0; 
 
-    for (int i = 0; i < n; i++) 
-    { 
-        // add current element to curr_sum 
-        curr_sum = curr_sum + arr[i]; 
+int main()
+{
+//Omit before Submitting the Code
+#ifndef ONLINE_JUDGE
+    freopen("input.txt" , "r" , stdin);
+    freopen("output.txt" ,"w" , stdout);
+#endif
 
-        // if curr_sum is equal to target sum 
-        // we found a subarray starting from index 0 
-        // and ending at index i 
-        if (curr_sum == sum) 
-        { 
-            cout << "Sum found between indexes "
-                << 0 << " to " << i << endl; 
-            return; 
-        } 
+    long long int t;
 
-        // If curr_sum - sum already exists in map 
-        // we have found a subarray with target sum 
-        if (map.find(curr_sum - sum) != map.end()) 
-        { 
-            cout << "Sum found between indexes "
-                << map[curr_sum - sum] + 1 
-                << " to " << i << endl; 
-            return; 
-        } 
+    cin>>t;
 
-        map[curr_sum] = i; 
-    } 
+    while(t--){
+        long long int n,s,temp,x;
+        vector<long long int> v;
 
-    // If we reach here, then no subarray exists 
-    cout << "No subarray with given sum exists"; 
-} 
+        n=0;
+        s=0;
+        temp=0;
+        x=0;
+        v.clear();
 
-// Driver program to test above function 
-int main() 
-{ 
-    int arr[] = {10, 2, -2, -20, 10}; 
-    int n = sizeof(arr)/sizeof(arr[0]); 
-    int sum = 2; 
+        cin>>n;
 
-    subArraySum(arr, n, sum); 
+        temp = n;
+        while(temp--){
+            cin>>x;
+            v.push_back(x);
+        }
 
-    return 0; 
-} 
+        cin>>s;
+
+        long long int currentSum=0,i , cont=0;
+        unordered_map<long long int , long long int> m;
+
+        for(i=0;i<n;i++){
+            currentSum = currentSum + v[i];
+
+            if(currentSum == s){
+                cont++;
+                //cout<<"adding 1 for "<<currentSum<<"\n";
+            }
+            
+            //find give m.end() address is the key u r finding is not present in the map
+            if(m.find(currentSum - s) != m.end()){
+                cont = cont + m[currentSum - s];
+                //cout<<"adding for remaining "<<currentSum - s<<"  and value="<<m[currentSum - s]<<"\n";
+            }
+            
+            //this statement inserts key=currentSum with value=i in map if not present and updates it if the key is present
+            //atleast for unordered map
+            m[currentSum]++;
+
+            //cout<<"key="<<currentSum<<"    value="<<m[currentSum]<<"\n";
+            
+            
+        }
+
+        cout<<cont<<"\n";
+
+    }
+
+
+	return 0;
+}
