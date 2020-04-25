@@ -31,3 +31,23 @@ Array
     -->> extended double pointer method --> sort array
                                         -->fix first number and subtract it from required sum
                                         --> now play double pointer method to find pair equal to remaining sum , hence u got your triplet
+
+
+    6. sub-array sum problems
+             --> A. maximum sum sub array --> kadane algorithm    timeComplexity=n
+             --> B Part 1 . sub array equal to sum X (only Non negative numbers as input)--> two pointer method without sorting   timeComplexity=n
+                                                  (work it out in your head , this works coz sorting with break the original array)
+
+            --> B Part 2 . sub array equal to sum X (negative numbers can also be input) 
+                                                    --> complex --> unordered_Map and hasing and preComputed sumArray linearly
+                                                    --> sum present if -> hash[current_sum] is present or hash[current_sum - sum] is present (explanation below)
+
+                                                    formal Algorithm: s -> required value that is X
+                                                       1. create a Hashmap (hm) to store key value pair, i.e, key = prefix sum and value = its index and a variable to store the current sum (sum = 0) and the sum of subarray as s
+                                                       2. Traverse through the array from start to end.
+                                                       3. For every element update the sum, i.e sum = sum + array[i]
+                                                       4. If sum is equal to s then print that the subarray with given sum is from 0 to i
+                                                       5. If there is any key in the HashMap which is equal to sum – s then print that the subarray with given sum is from hm[sum – s] to i
+                                                                (The 5th step is complex --> and it works --> because if hm[sum – s] is present than we have already seen a subArray of sumValue= (sum – s) which when subtracted with current subArray gives indices of subArray forming our required s i.e X)
+                                                       6. Put the sum and index in the hashmap as key-value pair.
+            --> C. sum of all sub array --> pre compute sum array and use DP --> order of n-square
