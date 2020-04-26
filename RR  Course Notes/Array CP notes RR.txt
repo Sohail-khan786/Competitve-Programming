@@ -75,3 +75,5 @@ cheap Trick : Cumulative Sum:
     Approach: First sort the array, and run a nested loop, fix an index and then try to fix an upper and lower index within which we can use all the lengths to form a triangle with that fixed index.
 
 CHEAP TRICK : sort and use two pointer method for all questions of type sum=x or sum>x or sum<x where sum is addition of the values at the two pointers 
+
+********************Array Page 1 problems complete************************
