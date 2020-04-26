@@ -1,0 +1,77 @@
+Arrays Notess
+
+
+Array
+   1. Maximum Difference betweeen two elements such that the larger element appears after it ->
+   
+                    A. Complex Method
+   --> cheap trick -- pre compute difference Array
+                   -- maximum sum sub array in difference array  is the maximum difference 
+				   -- maximum sum sub arra  y (Kadane algorithm problem)
+				   -- order of n solution
+				   
+				   B. Easy Method
+				   -- minimum so far in the left side minus current element (order of n solution)\
+				   
+	2. Finding the only number that occurs odd number of times in the array -->> XOR all elements and the result of XOR is answer
+	-->> cheap trick -> any number XORed with itself is zero and XOR is commutative
+	
+	3.Find duplicates in O(n) time and O(1) extra space (But all values are less than n)
+	   trick : if extra space was not constant , we would have used HashMap right away
+	--> as all values are less than n , use the input array as the hashMap, by Negating its element for first visit, and when u visit second 
+	    time to negate the value and see that its already negative , u know that the number is repeated
+		--> to handle the 0 case , increase all elements by 1 and show result by decresing 1 from each element
+		
+
+	4. Find a pair of Number whose sum is equal to X
+    -->> always sort and use two pointer method
+        -->> two pointers will be left and right  and loop always==> while(left<right)
+
+    5. sum of 3 elements equal to X
+    -->> extended double pointer method --> sort array
+                                        -->fix first number and subtract it from required sum
+                                        --> now play double pointer method to find pair equal to remaining sum , hence u got your triplet
+
+
+    6. sub-array sum problems
+             --> A. maximum sum sub array --> kadane algorithm    timeComplexity=n
+             --> B Part 1 . sub array equal to sum X (only Non negative numbers as input)--> two pointer method without sorting   timeComplexity=n
+                                                  (work it out in your head , this works coz sorting with break the original array)
+            
+            BEST
+            --> B Part 2 . sub array equal to sum X (negative numbers can also be input) 
+                                                    --> complex --> unordered_Map and hasing and preComputed sumArray linearly
+                                                    --> sum present if -> hash[current_sum] is present or hash[current_sum - sum] is present (explanation below)
+
+                                                    formal Algorithm: s -> required value that is X
+                                                       1. create a Hashmap (hm) to store key value pair, i.e, key = prefix sum and value = its index and a variable to store the current sum (sum = 0) and the sum of subarray as s
+                                                       2. Traverse through the array from start to end.
+                                                       3. For every element update the sum, i.e sum = sum + array[i]
+                                                       4. If sum is equal to s then print that the subarray with given sum is from 0 to i
+                                                       5. If there is any key in the HashMap which is equal to sum – s then print that the subarray with given sum is from hm[sum – s] to i
+                                                                (The 5th step is complex --> and it works --> because if hm[sum – s] is present than we have already seen a subArray of sumValue= (sum – s) which when subtracted with current subArray gives indices of subArray forming our required s i.e X)
+                                                       6. Put the sum and index in the hashmap as key-value pair.
+            --> C. sum of all sub array --> pre compute sum array and use DP --> order of n-square
+
+    
+Key Points : 
+      1. map (ordered)  implmeneted as self balacing BST hence everything from insert , search delete takes logn
+      2. unordered_Map are best used for hashing , every operation on average case take o(1)  , rare case it take o(n)
+
+
+cheap Trick : Cumulative Sum: 
+                   To make this process easy take cumulative sum of the sub-arrays taking 0’s as -1 and 1’s as it is. 
+                   The point where cumulative sum=0 will signify that the sub-array from starting till that point has equal number of 0’s and 1’s
+
+
+7. Largest sub array with equal 0 and 1 --> cumulative sum , hashmap  and logic
+                                        --> logic is that if sum occurs twics , the addition of the values in between is zero , i.e , equal number of 0 and 1 if u represent 0 as -1
+                                        --> beautifully written code with unordered_Map for hashing
+
+8. Number of triangles possible using 3 different element (kind of like comination array-elements of length 3)
+
+  Hint : Sum of two sides of a triangle should be greater than the third side.
+  -->Method 3: The time complexity can be greatly reduced using Two Pointer methods in just two nested loops.
+    Approach: First sort the array, and run a nested loop, fix an index and then try to fix an upper and lower index within which we can use all the lengths to form a triangle with that fixed index.
+
+CHEAP TRICK : sort and use two pointer method for all questions of type sum=x or sum>x or sum<x where sum is addition of the values at the two pointers 
