@@ -56,3 +56,12 @@ Array
 Key Points : 
       1. map (ordered)  implmeneted as self balacing BST hence everything from insert , search delete takes logn
       2. unordered_Map are best used for hashing , every operation on average case take o(1)  , rare case it take o(n)
+
+
+cheap Trick : Cumulative Sum: 
+                   To make this process easy take cumulative sum of the sub-arrays taking 0’s as -1 and 1’s as it is. 
+                   The point where cumulative sum=0 will signify that the sub-array from starting till that point has equal number of 0’s and 1’s
+
+
+7. Largest sub array with equal 0 and 1 --> cumulative sum , hashmap  and logic
+                                        --> logic is that if sum occurs twics , the addition of the values in between is zero , i.e , equal number of 0 and 1 if u represent 0 as -1
