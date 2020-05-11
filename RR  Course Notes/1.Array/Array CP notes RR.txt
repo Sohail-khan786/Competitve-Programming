@@ -78,4 +78,7 @@ CHEAP TRICK : sort and use two pointer method for all questions of type sum=x or
 
 ********************Array Page 1 problems complete************************
 
+9 . Find common element betweeen 3 sorted arrays :  
+          --> concept of union and intersection of 2 sorted arrays O(n) --> solve this problem separately
+
 video 23 --> equilibrium Index
