@@ -79,6 +79,14 @@ CHEAP TRICK : sort and use two pointer method for all questions of type sum=x or
 ********************Array Page 1 problems complete************************
 
 9 . Find common element betweeen 3 sorted arrays :  
-          --> concept of union and intersection of 2 sorted arrays O(n) --> solve this problem separately
+          --> concept of union and intersection of 2 sorted arrays O(n) --> solve both union and intersection problem separately
+          --> Pay attention that , union of two array and union of two sorted array are different problems 
+              if union of two array is given , sort both input arrays to convert it to problem of union of two sorted array
+          --> u can use hashing for above problems if input elements are  small .... use unordered_Map
+
+
+IMP points : (A) always consider duplicate cases 
+             (B) a set doesn't contain duplicates
+     VVIP    (C) always check your array for length on every IF condition to avoid ArrayIndexOutOfbounError
 
 video 23 --> equilibrium Index
