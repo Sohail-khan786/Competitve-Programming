@@ -78,7 +78,10 @@ CHEAP TRICK : sort and use two pointer method for all questions of type sum=x or
 
 ********************Array Page 1 problems complete************************
 
-9 . Find common element betweeen 3 sorted arrays :  
+9 . Find common element betweeen 3 sorted arrays : 
+          ---> soln : (A) hashing using unordered_map o(n)
+          --> soln : (B) sorting and merging O(nlogn)
+          --> soln : (c) if input is already sorted , direct merging O(n) 
           --> concept of union and intersection of 2 sorted arrays O(n) --> solve both union and intersection problem separately
           --> Pay attention that , union of two array O(nLogn) and union of two sorted array O(n) are different problems 
               if union of two array is given , sort both input arrays to convert it to problem of union of two sorted array
