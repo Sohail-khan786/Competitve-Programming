@@ -2,8 +2,15 @@
 Syntax : ProblemCode
           --> key point
 
+Most questions are hidden pattern type questions , rather than developing theory and
+seeing the pattern , do test cases on it , and see the pattern  
+
 1. STRNO
 --> key Points: 
         1.find prime factorization of a number fast by using square root technique
         2. find if a number is prime or not ..fastly ..by using square root technique
         3.core logic : Every number greater than or equal to 2 , can be written as product of prime numbers
+
+2.UNITGCD
+--> 1. n and (n+1) are always co prime 
+    2. no two even numbers can be co prime (trivial)
